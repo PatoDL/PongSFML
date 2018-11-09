@@ -6,3 +6,5 @@ release
 /Pong/libs/SFML-2.5.1/doc
 /Pong/libs/SFML-2.5.1/examples
 !/Pong/libs/SFML-2.5.1/bin
+*.opendb
+*.db
