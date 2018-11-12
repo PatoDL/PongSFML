@@ -1,22 +1,21 @@
 #include "SFML/Graphics.hpp"
 #include "STP/TMXLoader.hpp"
 
+#include "../Pong/juego.h"
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(800, 1600), "STP Example");
+	sf::RenderWindow window(sf::VideoMode(800, 600), "STP Example");
 	tmx::TileMap map("res/atr.tmx");
 
 	map.ShowObjects(); // Display all the layer objects.
 
-	//map.GetLayer("World").visible = false; // Hide a Layer named World
+	float recY = 0.f;
 
-										   
+	sf::View view1;
+	
+	Juego::initSprite();
 
-	sf::View view1(sf::FloatRect(200.f, 200.f,800.f,600.f));
 	sf::View view2(sf::Vector2f(400.f, 300.f), sf::Vector2f(800.f, 600.f));
-
-	window.setView(view2);
-
 
 	while (window.isOpen()) {    // Start the game loop
 		// Process events
@@ -26,13 +25,26 @@ int main()
 			if (event.type == sf::Event::Closed)
 				window.close();
 		}
+		
+		view1.reset(sf::FloatRect(0.f, recY, 800.f, 600.f));
 
+		window.setView(view1);
 		sf::View currentview = window.getView();
+		
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+		{
+			recY++;
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+		{
+			recY--;
+		}
 
 		// Clear screen
 		window.clear();
 		// Draw the map
-		window.draw(window);
+		window.draw(map);
+		window.draw(Juego::drawSprite());
 		// Update the window
 		window.display();
 	}

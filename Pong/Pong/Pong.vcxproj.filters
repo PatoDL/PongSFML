@@ -1,22 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Archivos de origen">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Juego">
+      <UniqueIdentifier>{6d399db1-7e1d-41cb-abdc-3ac05e1e553a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de encabezado">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="Juego\Gameplay">
+      <UniqueIdentifier>{18363318-356f-4a69-8b0d-71061d75465c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de recursos">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Juego\Menu">
+      <UniqueIdentifier>{f54a3f9e-ca26-47ae-b26e-dda15f92c142}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juego\Creditos">
+      <UniqueIdentifier>{5c5d2531-a24a-4863-bb70-c98a93592435}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juego\Gameover">
+      <UniqueIdentifier>{6cfd1c7a-ac1a-4178-8772-337fad86053a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Juego</Filter>
     </ClCompile>
+    <ClCompile Include="juego.cpp">
+      <Filter>Juego</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="juego.h">
+      <Filter>Juego</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
